@@ -1,0 +1,12 @@
+body {
+  background-color: bisque;
+}
+
+.container {
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+}

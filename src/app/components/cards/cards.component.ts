@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GetDishesService } from 'src/app/get-dishes.service';
 
 @Component({
   selector: 'app-cards',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CardsComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private httpService: GetDishesService) { }
+  dishes: any;
   ngOnInit(): void {
+
+    this.httpService.getDishes().subscribe(data => {
+      this.dishes = data
+    })
   }
 
 }

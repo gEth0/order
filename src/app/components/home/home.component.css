@@ -1,0 +1,33 @@
+.container {
+  height: 100%;
+  width: 100%;
+  border-left: 2px solid black;
+}
+
+button {
+  float: right;
+}
+
+mat-drawer {
+  width: 20%;
+  height: 100%;
+}
+
+mat-icon {
+
+  height: 25px;
+  width: 25px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.buttonsItem {
+
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -11,5 +11,8 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  isOpen = true;
+  onClick() {
+    this.isOpen = !this.isOpen
+  }
 }

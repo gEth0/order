@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 500px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 25px;
+}
+
+h5 {
+  word-wrap: initial;
+  font-size: 14px;
+}

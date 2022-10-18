@@ -1,0 +1,29 @@
+<div class="container" *ngIf="!isProfile; else profile">
+  <mat-grid-list cols="2" rowHeight="500px">
+    <mat-grid-tile *ngFor=" let dish of dishes, index as i">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <mat-card-title>
+            <a routerLink="/dishes/{{i}}">{{dish.dish}}</a>
+          </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="https://random.imagecdn.app/50/50" alt="Photo of a Shiba Inu">
+        <mat-card-actions>
+          <button mat-button>
+            <a class="btnA" routerLink="/dishes/{{i}}">View dish page</a>
+            <mat-icon>open_in_browser</mat-icon>
+          </button>
+          <button mat-button>
+            <a class="btnA">Add to Cart</a>
+            <mat-icon>add_shopping_cart</mat-icon>
+          </button>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+
+
+<ng-template #profile>
+  <app-dish></app-dish>
+</ng-template>
