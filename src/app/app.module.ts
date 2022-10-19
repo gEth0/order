@@ -18,6 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { DishesComponent } from './components/dishes/dishes.component';
 import { DishComponent } from './components/dish/dish.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { OrderDialogComponent } from './components/dialogs/order-dialog/order-dialog.component';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,8 +29,11 @@ import { DishComponent } from './components/dish/dish.component';
     NavComponent,
     NotfoundComponent,
     DishesComponent,
-    DishComponent
+    DishComponent,
+    ProfileComponent,
+    OrderDialogComponent
   ],
+  //FIX HERE BUG
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -39,8 +45,10 @@ import { DishComponent } from './components/dish/dish.component';
     MatListModule,
     MatCardModule,
     HttpClientModule,
-    MatGridListModule
+    MatGridListModule,
+    MatDialogModule
   ],
+  entryComponents: [OrderDialogComponent,],
   providers: [],
   bootstrap: [AppComponent]
 })

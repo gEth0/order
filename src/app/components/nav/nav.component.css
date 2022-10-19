@@ -5,7 +5,9 @@
   display: flex;
   top: 0;
   line-height: 100px;
+  background-color: rgba(255, 0, 0, 0.237);
 }
+
 
 .items {
   float: right;

@@ -13,4 +13,7 @@ export class GetDishesService {
   getDish(id: string) {
     return this.http.get('/api/dishes/' + id)
   }
+  getProfile() {
+    return this.http.get('/api/profile')
+  }
 }

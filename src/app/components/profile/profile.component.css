@@ -1,0 +1,44 @@
+.display {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+
+  display: flex;
+  margin: 20px;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  width: 800px;
+  align-items: center;
+
+}
+
+.img img {
+  float: left;
+  border: 2px solid black;
+  border-radius: 20px;
+  position: relative;
+  height: 200px;
+  width: 300px;
+
+}
+
+ul {
+  list-style: none;
+
+}
+
+ul .title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+ul .title span {
+  font-weight: normal;
+}
+
+.content {
+  margin: 20px;
+}
