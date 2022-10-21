@@ -1,1 +1,19 @@
-<p>order-dialog works!</p>
+<div class="container">
+  <div class="title">
+    <h2 mat-dialog-title>{{data.dish}}</h2>
+    <h5>Select the Quantity</h5>
+  </div>
+
+  <mat-dialog-content class="mat-typography content">
+
+    <input matInput type="number" [(ngModel)]="quantity" min="1" max="10">
+    <mat-slider thumbLabel tickInterval="1" [value]="quantity" step="1" min="1" max="10" aria-label="units"
+      [(ngModel)]="quantity"></mat-slider>
+
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="center" class="buttons">
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button [mat-dialog-close]="true" (click)="getValue()" cdkFocusInitial>Order</button>
+  </mat-dialog-actions>
+</div>

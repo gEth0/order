@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { GetDishesService } from 'src/app/get-dishes.service';
+import { GetDishesService } from 'src/app/services/get-dishes.service';
 import { OrderDialogComponent } from '../dialogs/order-dialog/order-dialog.component';
 
 
@@ -17,8 +17,7 @@ export class DishesComponent implements OnInit {
   isProfile: any;
   dish: any;
   id: any;
-  dialogRef: any;
-  result: any;
+
   ngOnInit(): void {
 
     this.httpService.getDishes().subscribe(data => {
@@ -28,12 +27,7 @@ export class DishesComponent implements OnInit {
     this.isProfile = !this.id ? false : true
 
   }
-  openDialog() {
-    this.dialogRef = this.dialog.open(OrderDialogComponent, {});
-    this.dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
-    });
-  }
+
 
 
 }

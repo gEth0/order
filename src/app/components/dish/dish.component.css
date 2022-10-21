@@ -15,3 +15,11 @@ h5 {
   word-wrap: initial;
   font-size: 14px;
 }
+
+.actions {
+  float: right;
+}
+
+.actions button {
+  background-color: rgba(52, 165, 42, 0.209);
+}

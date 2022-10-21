@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetDishesService } from 'src/app/get-dishes.service';
+import { GetDishesService } from 'src/app/services/get-dishes.service';
 
 @Component({
   selector: 'app-cards',

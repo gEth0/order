@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="title">
+    <h2>Your Cart</h2>
+  </div>
+  <div class="content">
+    <div class="items">
+      <ul>
+        <!-- ngFor el in cart -->
+        <li class="item" *ngFor="let dish of cart[0].dishes">
+          <mat-card class="example-card">
+            <mat-card-title-group>
+              <mat-card-title>{{dish.dish}}</mat-card-title>
+              <mat-card-subtitle>Quantity : {{dish.quantity}}</mat-card-subtitle>
+              <!-- <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg"> -->
+            </mat-card-title-group>
+            <mat-card-actions>
+              <button mat-button>Modify Quantity</button>
+              <button mat-button>Delete</button>
+            </mat-card-actions>
+          </mat-card>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</div>

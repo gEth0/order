@@ -21,6 +21,14 @@ import { DishComponent } from './components/dish/dish.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { OrderDialogComponent } from './components/dialogs/order-dialog/order-dialog.component';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input'
+import { FormsModule } from '@angular/forms';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AlertComponent } from './components/alert/alert.component';
+import { CartComponent } from './components/cart/cart.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +39,9 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     DishesComponent,
     DishComponent,
     ProfileComponent,
-    OrderDialogComponent
+    OrderDialogComponent,
+    AlertComponent,
+    CartComponent
   ],
   //FIX HERE BUG
   imports: [
@@ -46,7 +56,12 @@ import { MatDialog, MatDialogModule } from '@angular/material/dialog';
     MatCardModule,
     HttpClientModule,
     MatGridListModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSliderModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatSnackBarModule
   ],
   entryComponents: [OrderDialogComponent,],
   providers: [],

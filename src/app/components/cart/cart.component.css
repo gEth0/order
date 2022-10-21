@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.items {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.title h2 {
+  font-size: 30px;
+  justify-content: center;
+
+}
+
+mat-card {
+  margin: 20px;
+
+}
+
+.items ul {
+  list-style: none;
+
+}
