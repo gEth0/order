@@ -5,6 +5,7 @@
       <h5>{{dish.description}}</h5>
     </div>
   </div>
+  <input type="hidden" value="{{dish.id}}" #id>
   <div class="actions">
     <button mat-button (click)="openDialog()">
       <a class="btnA">Add to Cart</a>

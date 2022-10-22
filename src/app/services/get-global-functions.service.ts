@@ -3,29 +3,32 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GetCartService } from './get-cart.service';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class GetGlobalFunctionsService {
 
-  constructor(private service: GetCartService, private http: HttpClient) { }
-  result: any;
+  constructor(private http: HttpClient) { }
+  dishToDelete: any;
   newItem: any;
-  addDishToCart(data: any, quantity: number, cart: any) {
-    this.newItem = { "id": cart[0].dishes.length, "dish": data.dish, "quantity": quantity }
-    console.log(this.newItem)
-    console.log(cart)
-    cart[0].dishes.push(this.newItem)
-    console.log(cart)
+  indexDish: any;
+  addDishToCart(data: any, quantity: number, id: any) {
+
+    this.newItem = { "id": id, "dish": data.dish, "quantity": quantity }
+
     return this.newItem
-    // this.cart = this.cart[0].dishes
+  }
+  removeDishToCart(cart: any, id: any) {
+
+    this.dishToDelete = cart[0].dishes.find((val: any) => val.id == id)
+
+    this.indexDish = cart[0].dishes.findIndex((el: any) => { return el.id == this.dishToDelete.id })
+
+    cart[0].dishes.splice(this.indexDish, 1)
+    return cart
+
   }
 
-  sendNewItemToApi(newItem: {}) {
-    console.log(newItem)
-    return this.http.post('/api/upload/cartItem', newItem).subscribe(data => {
-      console.log(data + "data");
 
-    })
-  }
 }

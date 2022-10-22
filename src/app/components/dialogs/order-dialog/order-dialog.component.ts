@@ -1,14 +1,11 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { GetDishesService } from 'src/app/services/get-dishes.service';
+import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
-import { AnimateTimings } from '@angular/animations';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AlertComponent } from '../../alert/alert.component';
 import { GetGlobalFunctionsService } from 'src/app/services/get-global-functions.service';
-import { async } from '@angular/core/testing';
 import { GetCartService } from 'src/app/services/get-cart.service';
+import { SendToApiService } from 'src/app/services/send-to-api.service';
 
 
 @Component({
@@ -17,9 +14,11 @@ import { GetCartService } from 'src/app/services/get-cart.service';
   styleUrls: ['./order-dialog.component.css']
 })
 
-export class OrderDialogComponent implements OnInit, OnDestroy {
+export class OrderDialogComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() dish: any;
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private alert: MatSnackBar, private functions: GetGlobalFunctionsService, private service: GetCartService) { }
+  @ViewChild('id') idRef !: ElementRef;
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private alert: MatSnackBar, private functions: GetGlobalFunctionsService, private service: GetCartService, private sendToApi: SendToApiService) { }
+
 
 
   openSnackBar() {
@@ -38,6 +37,9 @@ export class OrderDialogComponent implements OnInit, OnDestroy {
     })
     this.quantity = 1;
   }
+  ngAfterViewInit(): void {
+    this.idRef = this.idRef.nativeElement.value
+  }
   ngOnDestroy(): void {
     this.service.getCart().subscribe(data => {
       this.cart = data
@@ -49,8 +51,8 @@ export class OrderDialogComponent implements OnInit, OnDestroy {
       this.openSnackBar()
     } else {
       console.log(this.cart)
-      this.newItem = this.functions.addDishToCart(this.data, this.quantity, this.cart)
-      this.functions.sendNewItemToApi(this.newItem)
+      this.newItem = this.functions.addDishToCart(this.data, this.quantity, this.idRef)
+      this.sendToApi.sendNewItemToApi(this.newItem)
     }
   }
 

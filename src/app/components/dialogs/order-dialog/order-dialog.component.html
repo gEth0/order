@@ -9,7 +9,7 @@
     <input matInput type="number" [(ngModel)]="quantity" min="1" max="10">
     <mat-slider thumbLabel tickInterval="1" [value]="quantity" step="1" min="1" max="10" aria-label="units"
       [(ngModel)]="quantity"></mat-slider>
-
+    <input type="hidden" value="{{data.id}}" #id>
   </mat-dialog-content>
 
   <mat-dialog-actions align="center" class="buttons">

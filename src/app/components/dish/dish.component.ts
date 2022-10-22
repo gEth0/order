@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { GetDishesService } from 'src/app/services/get-dishes.service';
@@ -10,9 +10,10 @@ import { OrderDialogComponent } from '../dialogs/order-dialog/order-dialog.compo
   templateUrl: './dish.component.html',
   styleUrls: ['./dish.component.css']
 })
-export class DishComponent implements OnInit {
-
+export class DishComponent implements OnInit, AfterViewInit {
+  @ViewChild('id') idRef!: ElementRef;
   constructor(private httpService: GetDishesService, private route: ActivatedRoute, public dialog: MatDialog) { }
+
   id: any;
   dish: any;
   dialogRef: any;
@@ -23,6 +24,10 @@ export class DishComponent implements OnInit {
     this.httpService.getDish(this.id).subscribe(data => {
       this.dish = data
     })
+
+  }
+  ngAfterViewInit(): void {
+    this.idRef = this.idRef.nativeElement.value
   }
   openDialog() {
     this.dialogRef = this.dialog.open(OrderDialogComponent, {

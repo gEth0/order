@@ -1,16 +1,16 @@
 <div class="container" *ngIf="!isProfile; else profile">
   <mat-grid-list cols="2" rowHeight="500px">
-    <mat-grid-tile *ngFor=" let dish of dishes, index as i">
+    <mat-grid-tile *ngFor=" let dish of dishes">
       <mat-card class="example-card">
         <mat-card-header>
           <mat-card-title>
-            <a routerLink="/dishes/{{i}}">{{dish.dish}}</a>
+            <a routerLink="/dishes/{{dish.id}}">{{dish.dish}}</a>
           </mat-card-title>
         </mat-card-header>
         <img mat-card-image src="https://random.imagecdn.app/50/50" alt="Photo of a Shiba Inu">
         <mat-card-actions>
           <button mat-button>
-            <a class="btnA" routerLink="/dishes/{{i}}">View dish page</a>
+            <a class="btnA" routerLink="/dishes/{{dish.id}}">View dish page</a>
             <mat-icon>open_in_browser</mat-icon>
           </button>
         </mat-card-actions>

@@ -4,10 +4,9 @@
 
 }
 
-.items {
+.title {
   display: flex;
   justify-content: center;
-  flex-direction: column;
 }
 
 .title h2 {

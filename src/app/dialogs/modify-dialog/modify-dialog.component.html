@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>{{dish.dish}}</h2>
+  <h4>Modify the quantity <br> You now have {{dish.quantity}} dishes selected</h4>
+  <div class="form">
+    <input type="number" max="10" min="1" [(ngModel)]="quantity">
+  </div>
+  <mat-dialog-actions>
+    <button mat-button (click)="onCloseClick()">Close</button>
+    <button mat-button [mat-dialog-close]="quantity">Confirm</button>
+  </mat-dialog-actions>
+</div>

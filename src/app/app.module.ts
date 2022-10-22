@@ -4,7 +4,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CardsComponent } from './components/cards/cards.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
@@ -28,11 +27,11 @@ import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AlertComponent } from './components/alert/alert.component';
 import { CartComponent } from './components/cart/cart.component';
+import { ModifyDialogComponent } from './dialogs/modify-dialog/modify-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponent,
     HomeComponent,
     NavComponent,
     NotfoundComponent,
@@ -41,7 +40,8 @@ import { CartComponent } from './components/cart/cart.component';
     ProfileComponent,
     OrderDialogComponent,
     AlertComponent,
-    CartComponent
+    CartComponent,
+    ModifyDialogComponent
   ],
   //FIX HERE BUG
   imports: [

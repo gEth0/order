@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { GetDishesService } from 'src/app/services/get-dishes.service';
@@ -11,7 +11,7 @@ import { OrderDialogComponent } from '../dialogs/order-dialog/order-dialog.compo
   styleUrls: ['./dishes.component.css']
 })
 export class DishesComponent implements OnInit {
-
+  // @ViewChild('id') idEl!: ElementRef;
   constructor(private httpService: GetDishesService, private route: ActivatedRoute, public dialog: MatDialog) { }
   dishes: any;
   isProfile: any;
