@@ -26,16 +26,19 @@ export class OrderDialogComponent implements OnInit, OnDestroy, AfterViewInit {
       duration: 2 * 1000,
     });
   }
-
+  total: any;
   quantity: any;
   id: any;
   cart: any;
   newItem: any;
+  newTotalPrice: any;
   ngOnInit(): void {
     this.service.getCart().subscribe(data => {
       this.cart = data
     })
     this.quantity = 1;
+    this.total = parseFloat(this.data.price.replace('$', '')) * this.quantity
+
   }
   ngAfterViewInit(): void {
     this.idRef = this.idRef.nativeElement.value
@@ -50,11 +53,16 @@ export class OrderDialogComponent implements OnInit, OnDestroy, AfterViewInit {
     if (this.quantity < 1 || this.quantity > 10) {
       this.openSnackBar()
     } else {
-      console.log(this.cart)
-      this.newItem = this.functions.addDishToCart(this.data, this.quantity, this.idRef)
-      this.sendToApi.sendNewItemToApi(this.newItem)
+      [this.newItem, this.newTotalPrice] = this.functions.addDishToCart(this.data, this.quantity, this.idRef, this.cart)
+      console.log(this.newItem)
+      console.log(this.newTotalPrice)
+      this.sendToApi.sendNewItemToApi(this.newItem, this.newTotalPrice)
+
     }
   }
-
+  onSlide(event: any) {
+    this.quantity = event.value
+    this.total = parseFloat(this.data.price.replace('$', '')) * this.quantity
+  }
 
 }

@@ -37,9 +37,9 @@ export class DishComponent implements OnInit, AfterViewInit {
 
     });
     this.dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
+
     });
   }
 
 }
-//Il problema è che nei dati json l'id non parte da 0 : fixare bug scaricando fake data da internet ASSICUARNDOSI CHE L'ID PARTA DA 0
+

@@ -10,6 +10,12 @@
   padding: 0 !important;
 }
 
+#total {
+  pointer-events: none;
+  border: none;
+}
+
+
 .content {
   display: flex;
   flex-direction: column;

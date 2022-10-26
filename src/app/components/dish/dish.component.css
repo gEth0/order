@@ -23,3 +23,8 @@ h5 {
 .actions button {
   background-color: rgba(52, 165, 42, 0.209);
 }
+
+.btnPrice {
+  background-color: rgba(0, 200, 0, 0.518);
+  margin: 10px;
+}

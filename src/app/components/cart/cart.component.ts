@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ModifyDialogComponent } from 'src/app/dialogs/modify-dialog/modify-dialog.component';
@@ -15,26 +15,37 @@ import { AlertComponent } from '../alert/alert.component';
 export class CartComponent implements OnInit {
 
   constructor(private service: GetCartService, private functions: GetGlobalFunctionsService, private sendToApi: SendToApiService, public dialog: MatDialog, private alert: MatSnackBar) { }
+
+  newPrice: any;
   cart: any;
   newCart: any;
   quantity: any;
+  total: any;
+  priceToModify: any;
   ngOnInit(): void {
     this.service.getCart().subscribe((data: any) => {
       this.cart = data
+      console.log(data)
     })
 
   }
+
+
+
   openSnackBar() {
     this.alert.openFromComponent(AlertComponent, {
       duration: 2 * 1000,
     });
   }
-  onDeleteDish(dish: any) {
-    this.newCart = this.functions.removeDishToCart(this.cart, dish.id)
-    this.sendToApi.deleteDish(this.newCart)
-  }
-  onModifyQuantity(dish: any) {
 
+  onDeleteDish(dish: any) {
+    [this.newCart, this.newPrice] = this.functions.removeDishToCart(this.cart, dish.id)
+    console.log(this.newPrice)
+    this.sendToApi.deleteDish(this.newCart, this.newPrice)
+    window.location.reload()
+  }
+
+  onModifyQuantity(dish: any) {
     const dialogRef = this.dialog.open(ModifyDialogComponent, {
       data: dish
     })
@@ -43,9 +54,11 @@ export class CartComponent implements OnInit {
       if (this.quantity > 10 || this.quantity < 1 || this.quantity == undefined) {
         this.openSnackBar()
       } else {
-        this.sendToApi.modifyQuantity(dish, this.quantity)
+
+        this.priceToModify = parseFloat(dish.price.replace("$", ""))
+        this.newPrice = this.sendToApi.modifyQuantity(dish, this.quantity, this.priceToModify)
       }
     })
-
+    // window.location.reload()
   }
 }

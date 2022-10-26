@@ -2,13 +2,18 @@
   <div class="title">
     <h2 mat-dialog-title>{{data.dish}}</h2>
     <h5>Select the Quantity</h5>
+    <label for="total">Total: $</label>
+
+    <strong>
+      <input id="total" matInput name="total" [(ngModel)]="total">
+    </strong>
   </div>
 
   <mat-dialog-content class="mat-typography content">
 
     <input matInput type="number" [(ngModel)]="quantity" min="1" max="10">
-    <mat-slider thumbLabel tickInterval="1" [value]="quantity" step="1" min="1" max="10" aria-label="units"
-      [(ngModel)]="quantity"></mat-slider>
+    <mat-slider (input)="onSlide($event)" thumbLabel tickInterval="1" [value]="quantity" step="1" min="1" max="10"
+      aria-label="units" [(ngModel)]="quantity"></mat-slider>
     <input type="hidden" value="{{data.id}}" #id>
   </mat-dialog-content>
 

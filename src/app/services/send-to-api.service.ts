@@ -7,21 +7,25 @@ import { Injectable } from '@angular/core';
 export class SendToApiService {
 
   constructor(private http: HttpClient) { }
-  sendNewItemToApi(newItem: {}) {
-    return this.http.post('/api/upload/cartItem', newItem).subscribe(data => {
+  sendNewItemToApi(newItem: {}, priceToAdd: any) {
+    return this.http.post('/api/upload/cartItem', { "newItem": newItem, "newPrice": priceToAdd }).subscribe(data => {
     })
   }
-  deleteDish(newCart: any) {
-    return this.http.put('/api/cart/removeItem', newCart).subscribe(data => {
+  deleteDish(newCart: any, newPrice: any) {
+    return this.http.put('/api/cart/removeItem', { "newCart": newCart, "newPrice": newPrice }).subscribe(data => {
 
     })
   }
-  modifyQuantity(dish: any, quantity: number) {
-
+  modifyQuantity(dish: any, quantity: number, newDishPrice: any) {
+    console.log(newDishPrice)
     dish.quantity = quantity
 
-    return this.http.patch('/api/cart/changeQuantity', dish).subscribe(data => {
+    return this.http.patch('/api/cart/changeQuantity', { "dish": dish, "newQuantity": dish.quantity, "newDishPrice": newDishPrice }).subscribe(data => {
 
+    })
+  }
+  newPrice(newPrice: any) {
+    return this.http.post('/api/update/cartPrice', newPrice).subscribe(data => {
     })
   }
 }

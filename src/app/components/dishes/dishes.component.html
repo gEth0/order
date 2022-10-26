@@ -9,9 +9,12 @@
         </mat-card-header>
         <img mat-card-image src="https://random.imagecdn.app/50/50" alt="Photo of a Shiba Inu">
         <mat-card-actions>
-          <button mat-button>
+          <button mat-button class="btnDishPage">
             <a class="btnA" routerLink="/dishes/{{dish.id}}">View dish page</a>
             <mat-icon>open_in_browser</mat-icon>
+          </button>
+          <button class='btnPrice' mat-button>
+            {{dish.price}}
           </button>
         </mat-card-actions>
       </mat-card>
