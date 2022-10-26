@@ -14,6 +14,11 @@
             <mat-card-title-group>
               <mat-card-title>{{dish.dish}}</mat-card-title>
               <mat-card-subtitle>Quantity : {{dish.quantity}}</mat-card-subtitle>
+              <mat-card-subtitle> Single Item Price :
+                <button class='btnPrice' mat-button>
+                  {{dish.price}}
+                </button>
+              </mat-card-subtitle>
               <img mat-card-sm-image src="https://random.imagecdn.app/50/50">
             </mat-card-title-group>
             <mat-card-actions>
@@ -28,6 +33,11 @@
         </li>
 
       </ul>
+    </div>
+    <div class="procedToOrder">
+      <button class="order" mat-button routerLink="payment">
+        Order <mat-icon>arrow_forward_ios</mat-icon>
+      </button>
     </div>
   </div>
 </div>

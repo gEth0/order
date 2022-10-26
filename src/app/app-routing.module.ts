@@ -6,6 +6,8 @@ import { HomeComponent } from './components/home/home.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { CartComponent } from './components/cart/cart.component';
+import { PaymentPageComponent } from './components/payment-page/payment-page.component';
+
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "homepage" },
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: "dishes/:id", component: DishComponent },
   { path: "profile", component: ProfileComponent },
   { path: "profile/cart", component: CartComponent },
+  { path: "profile/cart/payment", component: PaymentPageComponent },
   { path: "notfound", component: NotfoundComponent },
   { path: "**", redirectTo: "notfound" }
 ];

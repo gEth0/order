@@ -28,6 +28,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AlertComponent } from './components/alert/alert.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ModifyDialogComponent } from './dialogs/modify-dialog/modify-dialog.component';
+import { PaymentPageComponent } from './components/payment-page/payment-page.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { ModifyDialogComponent } from './dialogs/modify-dialog/modify-dialog.com
     OrderDialogComponent,
     AlertComponent,
     CartComponent,
-    ModifyDialogComponent
+    ModifyDialogComponent,
+    PaymentPageComponent
   ],
   //FIX HERE BUG
   imports: [

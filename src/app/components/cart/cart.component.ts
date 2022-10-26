@@ -57,6 +57,7 @@ export class CartComponent implements OnInit {
 
         this.priceToModify = parseFloat(dish.price.replace("$", ""))
         this.newPrice = this.sendToApi.modifyQuantity(dish, this.quantity, this.priceToModify)
+        window.location.reload()
       }
     })
     // window.location.reload()
