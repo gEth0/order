@@ -25,10 +25,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input'
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { AlertComponent } from './components/alert/alert.component';
+import { AlertComponent } from './snackBars/alert/alert.component';
 import { CartComponent } from './components/cart/cart.component';
 import { ModifyDialogComponent } from './dialogs/modify-dialog/modify-dialog.component';
 import { PaymentPageComponent } from './components/payment-page/payment-page.component';
+import { MatTableModule } from '@angular/material/table';
+import { PayDialogComponent } from './dialogs/pay-dialog/pay-dialog.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { PaymentSnackComponent } from './snackBars/payment-snack/payment-snack.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,9 @@ import { PaymentPageComponent } from './components/payment-page/payment-page.com
     AlertComponent,
     CartComponent,
     ModifyDialogComponent,
-    PaymentPageComponent
+    PaymentPageComponent,
+    PayDialogComponent,
+    PaymentSnackComponent
   ],
   //FIX HERE BUG
   imports: [
@@ -63,7 +69,9 @@ import { PaymentPageComponent } from './components/payment-page/payment-page.com
     MatFormFieldModule,
     MatInputModule,
     FormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [OrderDialogComponent,],
   providers: [],

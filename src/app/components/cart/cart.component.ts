@@ -5,7 +5,7 @@ import { ModifyDialogComponent } from 'src/app/dialogs/modify-dialog/modify-dial
 import { GetCartService } from 'src/app/services/get-cart.service';
 import { GetGlobalFunctionsService } from 'src/app/services/get-global-functions.service';
 import { SendToApiService } from 'src/app/services/send-to-api.service';
-import { AlertComponent } from '../alert/alert.component';
+import { AlertComponent } from '../../snackBars/alert/alert.component';
 
 @Component({
   selector: 'app-cart',

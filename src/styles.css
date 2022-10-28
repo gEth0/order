@@ -10,3 +10,24 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #DFF6FF;
 }
+
+.succSnackBar {
+  background-color: rgba(0, 200, 0, 0.518);
+
+}
+
+.succSnackBar p {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.errSnackBar {
+  background-color: rgb(223, 63, 63);
+}
+
+.errSnackBar p {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}

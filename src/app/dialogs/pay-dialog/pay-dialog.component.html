@@ -1,0 +1,10 @@
+<div class="container">
+  <h2 mat-dialog-title>Complete the Order</h2>
+  <mat-dialog-content class="mat-typography">
+    <h3>Your Total To Pay: {{data.totalPrice |currency : "USD":"symbol":"1.2-2"}}</h3>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button (click)="onPay()" [mat-dialog-close]="true" cdkFocusInitial>Pay</button>
+  </mat-dialog-actions>
+</div>

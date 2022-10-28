@@ -1,0 +1,47 @@
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.title h2 {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+
+.content {
+  margin: 20px;
+  padding: 10px;
+}
+
+.total h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.total h3 span {
+  background-color: rgba(0, 200, 0, 0.518);
+
+}
+
+table {
+  width: 50%;
+}
+
+th {
+  color: white;
+  background-color: #256D85;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.resume {
+  width: 50%;
+}
+
+.resume button {
+  margin: 20px;
+  background-color: rgba(0, 200, 0, 0.518);
+  font-size: 17px;
+  float: right;
+}

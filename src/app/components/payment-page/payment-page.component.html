@@ -1,1 +1,36 @@
-<p>payment-page works!</p>
+<div class="container">
+  <div class="title">
+    <h2>Check Out</h2>
+  </div>
+  <div class="content">
+    <div class="total">
+      <h3>Your Total : <span> {{cart[1].totalPrice | currency :"USD":"symbol":"1.2-2"}}</span></h3>
+    </div>
+    <div class="table">
+      <table mat-table [dataSource]="cart[0].dishes" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="Name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.dish}} </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="Quantity">
+          <th mat-header-cell *matHeaderCellDef> Quantity </th>
+          <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Price">
+          <th mat-header-cell *matHeaderCellDef> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <div class="resume">
+      <button mat-button (click)="onClick()">Order and Pay</button>
+    </div>
+  </div>
+</div>

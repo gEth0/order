@@ -28,4 +28,7 @@ export class SendToApiService {
     return this.http.post('/api/update/cartPrice', newPrice).subscribe(data => {
     })
   }
+  payment(charge: any) {
+    return this.http.post('/api/wallet', charge)
+  }
 }

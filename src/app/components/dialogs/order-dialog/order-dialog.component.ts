@@ -2,7 +2,7 @@ import { AfterViewInit, Component, ElementRef, Input, OnChanges, OnDestroy, OnIn
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Inject } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AlertComponent } from '../../alert/alert.component';
+import { AlertComponent } from '../../../snackBars/alert/alert.component';
 import { GetGlobalFunctionsService } from 'src/app/services/get-global-functions.service';
 import { GetCartService } from 'src/app/services/get-cart.service';
 import { SendToApiService } from 'src/app/services/send-to-api.service';
