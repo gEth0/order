@@ -33,6 +33,7 @@ import { MatTableModule } from '@angular/material/table';
 import { PayDialogComponent } from './dialogs/pay-dialog/pay-dialog.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaymentSnackComponent } from './snackBars/payment-snack/payment-snack.component';
+import { ErrSnackComponent } from './snackBars/err-snack/err-snack.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { PaymentSnackComponent } from './snackBars/payment-snack/payment-snack.c
     ModifyDialogComponent,
     PaymentPageComponent,
     PayDialogComponent,
-    PaymentSnackComponent
+    PaymentSnackComponent,
+    ErrSnackComponent
   ],
   //FIX HERE BUG
   imports: [

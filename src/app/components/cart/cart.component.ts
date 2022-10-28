@@ -22,11 +22,13 @@ export class CartComponent implements OnInit {
   quantity: any;
   total: any;
   priceToModify: any;
+  isVisible !: any;
   ngOnInit(): void {
     this.service.getCart().subscribe((data: any) => {
       this.cart = data
       console.log(data)
     })
+
 
   }
 

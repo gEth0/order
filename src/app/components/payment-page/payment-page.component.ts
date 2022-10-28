@@ -15,6 +15,7 @@ export class PaymentPageComponent implements OnInit {
   dishes: any;
   cart: any
   dialogResult: any
+  isVisible!: boolean
   ngOnInit(): void {
     this.service.getDishes().subscribe(data => {
       this.dishes = data
@@ -22,6 +23,7 @@ export class PaymentPageComponent implements OnInit {
     this.getCart.getCart().subscribe(data => {
       this.cart = data
     })
+
   }
   onClick() {
     const dialogRef = this.dialog.open(PayDialogComponent, {

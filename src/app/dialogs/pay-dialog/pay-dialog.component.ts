@@ -3,6 +3,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SendToApiService } from 'src/app/services/send-to-api.service';
 import { AlertComponent } from 'src/app/snackBars/alert/alert.component';
+import { ErrSnackComponent } from 'src/app/snackBars/err-snack/err-snack.component';
 import { PaymentSnackComponent } from 'src/app/snackBars/payment-snack/payment-snack.component';
 
 
@@ -18,7 +19,7 @@ export class PayDialogComponent implements OnInit {
   ngOnInit(): void {
   }
   openSnackBar(err?: any) {
-    this.alert.openFromComponent(AlertComponent, {
+    this.alert.openFromComponent(ErrSnackComponent, {
       data: err,
       duration: 2 * 1000,
       panelClass: ['errSnackBar']
