@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
+import { User } from 'src/app/models/user.model';
 
 @Component({
   selector: 'app-nav',
@@ -7,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private auth: AuthService) { }
+  user: any;
   ngOnInit(): void {
+    this.user = this.auth.user
   }
-  isOpen = true;
-  onClick() {
-    this.isOpen = !this.isOpen
+  onLogOut() {
+    this.auth.logOut()
+    window.location.reload()
   }
 }

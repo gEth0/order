@@ -36,4 +36,10 @@ export class SendToApiService {
 
     })
   }
+  login(email: string, password: string) {
+    return this.http.post('/api/login', { email: email, password: password })
+  }
+  register(email: string, password: string) {
+    return this.http.post('/api/register', { email: email, password: password })
+  }
 }

@@ -34,6 +34,10 @@ import { PayDialogComponent } from './dialogs/pay-dialog/pay-dialog.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PaymentSnackComponent } from './snackBars/payment-snack/payment-snack.component';
 import { ErrSnackComponent } from './snackBars/err-snack/err-snack.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SuccLoginComponent } from './snackBars/succ-login/succ-login.component';
+import { SuccRegComponent } from './snackBars/succ-reg/succ-reg.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +55,11 @@ import { ErrSnackComponent } from './snackBars/err-snack/err-snack.component';
     PaymentPageComponent,
     PayDialogComponent,
     PaymentSnackComponent,
-    ErrSnackComponent
+    ErrSnackComponent,
+    LoginComponent,
+    SignUpComponent,
+    SuccLoginComponent,
+    SuccRegComponent
   ],
   //FIX HERE BUG
   imports: [

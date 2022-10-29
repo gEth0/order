@@ -1,5 +1,8 @@
 <div class="nav">
-  <div class="items">
+  <div class="logo">
+    <h3>Order</h3>
+  </div>
+  <div class="items" *ngIf="user">
 
     <button mat-button>
       <a routerLink="dishes">
@@ -15,6 +18,22 @@
         <mat-icon>person</mat-icon>Profile
       </a>
     </button>
-
+    <button (click)="onLogOut()" mat-button>
+      <a>
+        LogOut
+      </a>
+    </button>
+  </div>
+  <div class="ac">
+    <button mat-button *ngIf="!user">
+      <a routerLink="login">
+        Login<mat-icon>arrow_forward_ios</mat-icon>
+      </a>
+    </button>
+    <button class="" mat-button>
+      <a routerLink="signUp" *ngIf="!user">
+        <mat-icon>fiber_new</mat-icon>SignUp
+      </a>
+    </button>
   </div>
 </div>
