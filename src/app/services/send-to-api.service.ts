@@ -31,4 +31,9 @@ export class SendToApiService {
   payment(charge: any) {
     return this.http.post('/api/wallet', charge)
   }
+  addDishesToWaitList(dishes: any) {
+    return this.http.post('/api/upload/waitList', dishes).subscribe(data => {
+
+    })
+  }
 }
