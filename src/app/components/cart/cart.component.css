@@ -54,3 +54,29 @@ mat-card {
   width: 130px;
   font-size: 20px;
 }
+
+.getSomeOrder {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  padding: 10px;
+}
+
+.getSomeOrder h2,
+h4 {
+  font-weight: bold;
+}
+
+.getSomeOrder h2 {
+  font-size: 25px;
+}
+
+.getSomeOrder h4 {
+  font-size: 19px;
+}
+
+.getSomeOrder a {
+  color: black;
+}
